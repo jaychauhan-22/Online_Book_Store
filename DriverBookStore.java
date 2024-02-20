@@ -32,7 +32,7 @@ public class DriverBookStore {
                     System.out.println("\nPress 1: To buy Book");
                     System.out.println("Press any other digit: To return to book menu");
                     int buychoice = Integer.parseInt(s.nextLine());
-                    System.out.println(buychoice);
+                    // System.out.println(buychoice);
                     if(buychoice==1)
                         vendor.buyBook(customer,searchedresult);
                     
