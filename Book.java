@@ -25,15 +25,24 @@ public class Book {
         this.bookrate = bookrate;
 
     }
+    public int getBookCode(){
+        return this.bookcode;
+    }
+    public int getBookPrice(){
+        return this.bookrate;
+    }
+    public String getBookName(){
+        return this.bookname;
+    }
     public String getBookDetail(){
-        return "Code: "+this.bookcode+"\nName: "+this.bookname+"\nAuthor: "+this.bookauthor+"\nRate: "+this.bookrate+" rupees";
+        return "Code: "+this.bookcode+"\nName: "+this.bookname+"\nAuthor: "+this.bookauthor+"\nRate: "+this.bookrate+" rupees\n";
     }
     public static Set<Book> getAllAvailableBooks() {
         return availablebooks;
     }
     public static Book searchBookInRepo(String searchbook){
         for(Book b : availablebooks){
-            if(b.bookname.equals(searchbook))
+            if(b.bookname.toLowerCase().equals(searchbook.toLowerCase()))
                 return b;
         }
         return null;

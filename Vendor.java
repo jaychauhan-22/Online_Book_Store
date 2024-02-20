@@ -4,7 +4,7 @@ import java.util.Set;
 public class Vendor  {
 
     public Customer doCustomerAuthentication(){
-        System.out.print("\n\nCustomer Login <new/old>: ");
+        System.out.print("\nCustomer Login <new/old>: ");
         Scanner s = new Scanner(System.in);
         String customer_type = s.nextLine().toLowerCase();
         // For new Customer
@@ -43,5 +43,21 @@ public class Vendor  {
     public Book searchBookByName(String searchbook){
         Book b= Book.searchBookInRepo(searchbook);
         return b;
+    }
+    
+    public Customer buyBook(Customer customer,Book purchasedbook){
+        customer.booksbought.add(purchasedbook.getBookName());
+        customer.billoverdue+=purchasedbook.getBookPrice();
+        return customer;
+    }
+    public void getBillInfo(Customer customer){
+        System.out.println("\nList of Purchased Books:");
+        if(customer.billoverdue>=0){
+            for(String b : customer.booksbought){
+                Book result = this.searchBookByName(b);
+                System.out.println(result.getBookDetail());
+            }
+            System.out.println("\nTotal Purchase: " + customer.billoverdue+" rupees");
+        }
     }
 }
