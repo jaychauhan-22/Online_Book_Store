@@ -6,6 +6,6 @@ The Online Book Store project is a Java-based application that emulates the func
 ## Features
 - **View Available Books**: Customers can see the list of books available for purchase.
 - **Search Book**: Customers can search for books by their name.
-- **Customer Authentication**: New customers can create accounts, while existing customers can log in.
+- **Customer Authentication**: New customers can create accounts.
 - **Purchase Books**: Customers can add books to their cart and proceed with the purchase.
 - **Generate Bill Information**: Customers can view their bill summary, including the list of purchased books and the total amount due.
